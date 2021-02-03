@@ -12,6 +12,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/create-event', title: 'Create Event',  icon:'event', class: '' },
     { path: '/events', title: 'Event List',  icon:'event', class: '' },
     { path: '/users', title: 'User List',  icon:'group', class: '' },
+    { path: '/register', title: 'Register',  icon:'person', class: '' },
     { path: '/change-password', title: 'Change Password',  icon:'settings', class: '' },
 ];
 

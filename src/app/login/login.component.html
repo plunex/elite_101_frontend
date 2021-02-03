@@ -4,23 +4,21 @@
         <div class="col l6">
             <div class="card card-border">
                 <form action="" novalidate class="m-5">
-                    <h3 class="center">Sign in</h3>
-                    <div class="input-field">
-                        <i class="material-icons prefix">email</i>
-                        <input id="email" type="email">
+                    <h3 class="text-center">Sign in</h3>
+                    <div class="form-group">
                         <label for="email">Email</label>
+                        <input id="email" class="form-control" type="email">
                     </div>
     
-                    <div class="input-field">
-                        <i class="material-icons prefix">password</i>
-                        <input id="password" type="password">
+                    <div class="form-group">
                         <label for="password">Password</label>
+                        <input id="password" class="form-control" type="password">
                     </div>
     
                     <div class="text-center">
-                        <input type="button" class="btn red" value="Sign In">
+                        <input type="button" class="btn btn-danger" value="Sign In">
                     </div>
-                    <p class="center">I don't have an account? <a class="red-text" [routerLink]="['/register']">Sign Up</a></p>
+                    <p class="text-center">I don't have an account? <a class="red-text" [routerLink]="['/register']">Sign Up</a></p>
                 </form>
             </div>
         </div>

@@ -5,6 +5,7 @@ import { CreateEventComponent } from './../../create-event/create-event.componen
 import { EventListComponent} from './../../event-list/event-list.component';
 import { UsersComponent } from './../../users/users.component';
 import { ChangePasswordComponent } from './../../change-password/change-password.component'
+import { RegisterComponent } from './../../register/register.component';
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -22,6 +23,10 @@ export const AdminLayoutRoutes: Routes = [
     {
         path: 'users',
         component: UsersComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
     },
     {
         path: 'change-password',
