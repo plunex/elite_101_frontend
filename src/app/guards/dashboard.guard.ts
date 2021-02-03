@@ -12,8 +12,8 @@ export class DashboardGuard implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree {
-    if (this.loginService.getToken('user')) {
-    return true;
+    if (this.loginService.getUser) {
+      return true;
     }
     return this.router.parseUrl('login');
   }

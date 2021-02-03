@@ -1,4 +1,102 @@
-
-<div class="container mt-5">
-    <h1>Dashboard</h1>
+<div class="main-content">
+    <div class="container-fluid">
+        <h1>Welcome {{ profile$?.name }}</h1>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">events</i>
+                        </div>
+                        <p class="card-category">All Events</p>
+                        <h3 class="card-title">{{ profile$.events.length }}
+                            <small>Events</small>
+                        </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">events</i>
+                            <a href="javascript:void(0)">Add More Events...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-secondary card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">person</i>
+                        </div>
+                        <p class="card-category">Users</p>
+                        <h3 class="card-title">{{ profile$.users.length }} </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">person</i>
+                            <a href="javascript:void(0)">Add More User...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-success card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons"> thumb_up </i>
+                        </div>
+                        <p class="card-category">Likes</p>
+                        <h3 class="card-title">{{ profile$.users.length }} </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">thumb_up</i>
+                            <a href="javascript:void(0)">View Events...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-primary card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons"> events </i>
+                        </div>
+                        <p class="card-category">Upcoming Events</p>
+                        <h3 class="card-title">{{ profile$.events.length }} </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">events</i>
+                            <a href="javascript:void(0)">Upcoming Events...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h2>Active Events</h2>
+            <div class="card ">
+                <table class="table">
+                    <thead class="card-header card-header-warning">
+                        <tr>
+                            <th class="font-weight-bolder">Event Name</th>
+                            <th class="font-weight-bolder">Date</th>
+                            <th class="font-weight-bolder">Start Time</th>
+                            <th class="font-weight-bolder">End Time</th>
+                            <th class="font-weight-bolder">Location</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                            <tr class="font-weight-bold" *ngFor="let event of profile$.events">
+                                <td scope="row">{{ event.name }}</td>
+                                <td scope="row">{{ event.date |date }}</td>
+                                <td scope="row">{{ event.startTime }}</td>
+                                <td scope="row">{{ event.endTime }}</td>
+                                <td scope="row">{{ event.location }}</td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>

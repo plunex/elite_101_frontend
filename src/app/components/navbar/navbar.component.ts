@@ -2,6 +2,8 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Profile } from 'app/models/profile';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+    profile$: Observable<Profile>;
     private listTitles: any[];
     location: Location;
       mobile_menu_visible: any = 0;
@@ -21,6 +24,7 @@ export class NavbarComponent implements OnInit {
     }
 
     ngOnInit(){
+        this.profile$ = JSON.parse(localStorage.getItem('user'));
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
