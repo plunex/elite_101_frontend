@@ -6,6 +6,8 @@ import { EventListComponent} from './../../event-list/event-list.component';
 import { UsersComponent } from './../../users/users.component';
 import { ChangePasswordComponent } from './../../change-password/change-password.component'
 import { RegisterComponent } from './../../register/register.component';
+import { UpcomingEventsComponent } from 'app/upcoming-events/upcoming-events.component';
+import { AllEventsComponent } from 'app/all-events/all-events.component';
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -18,7 +20,17 @@ export const AdminLayoutRoutes: Routes = [
     },
     {
         path: 'events',
-        component: EventListComponent
+        component: EventListComponent,
+        children: [
+            {
+                path: '',
+                component: AllEventsComponent
+            },
+            {
+                path: 'upcoming',
+                component: UpcomingEventsComponent
+            }
+        ],
     },
     {
         path: 'users',

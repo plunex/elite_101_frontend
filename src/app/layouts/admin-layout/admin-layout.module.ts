@@ -9,13 +9,17 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
-
+import { MatCardModule } from '@angular/material/card';
+import { NgxPaginationModule } from 'ngx-pagination';
 // Components
 import { DashboardComponent } from './../../dashboard/dashboard.component';
 import { CreateEventComponent } from './../../create-event/create-event.component';
 import { EventListComponent} from './../../event-list/event-list.component';
 import { UsersComponent } from './../../users/users.component';
 import { ChangePasswordComponent } from './../../change-password/change-password.component'
+
+import { UpcomingEventsComponent } from '../../upcoming-events/upcoming-events.component';
+import { AllEventsComponent } from '../../all-events/all-events.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -28,6 +32,8 @@ import { ChangePasswordComponent } from './../../change-password/change-password
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatCardModule,
+    NgxPaginationModule
   ],
   declarations: [
     // Add components for views
@@ -35,7 +41,9 @@ import { ChangePasswordComponent } from './../../change-password/change-password
     CreateEventComponent,
     EventListComponent,
     UsersComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    AllEventsComponent,
+    UpcomingEventsComponent
   ]
 })
 

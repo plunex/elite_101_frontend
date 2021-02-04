@@ -1,0 +1,27 @@
+<h2>Upcoming Events</h2>
+<div class="card">
+    <table class="table table-stripe">
+        <thead class="card-header card-header-danger">
+            <tr>
+            <th class="font-weight-bolder">Event Name</th>
+            <th class="font-weight-bolder">Date</th>
+            <th class="font-weight-bolder">Start Time</th>
+            <th class="font-weight-bolder">End Time</th>
+            <th class="font-weight-bolder">Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="font-weight-bold" *ngFor="let event of events$ | paginate: { itemsPerPage: 10, currentPage: page }">
+            <td scope="row">{{ event.name }}</td>
+            <td scope="row">{{ event.date | date }}</td>
+            <td scope="row">{{ event.startTime }}</td>
+            <td scope="row">{{ event.endTime }}</td>
+            <td scope="row">{{ event.location }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-right">
+        <pagination-controls autoHide="true" previousLabel="<"
+        nextLabel=">" (pageChange)="page = $event"></pagination-controls>
+    </div>
+</div>

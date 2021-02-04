@@ -9,7 +9,7 @@ export class InMemoryDataService implements InMemoryDbService {
   constructor() { }
 
   createDb() {
-    return { profile }
+    return {  }
   }
 }
 
@@ -21,25 +21,29 @@ const profile = {
   users: [
     {
       id: 1,
-      name: 'User One',
-      email: 'userone@email.com',
+      name: 'Jeffry Goodman',
+      email: 'jeferygodman@email.com',
       phone: '+1(111)-111-1111',
+      image: '../assets/img/faces/face1.png'
     },
     {
       id: 2,
-      name: 'User Two',
-      email: 'usertwo@email.com',
-      phone: '+1(111)-111-1111'
+      name: 'George Hutton',
+      email: 'georgehutton@email.com',
+      phone: '+1(111)-111-1111',
+      image: '../assets/img/faces/face2.png'
     },{
       id: 3,
-      name: 'User Three',
-      email: 'userthree@email.com',
-      phone: '+1(111)-111-1111'
+      name: 'Dennis Major',
+      email: 'dennismajor@email.com',
+      phone: '+1(111)-111-1111',
+      image: '../assets/img/faces/face.jpeg'
     },{
       id: 4,
-      name: 'User Four',
-      email: 'userfour@email.com',
-      phone: '+1(111)-111-1111'
+      name: 'David John',
+      email: 'davidjohn@email.com',
+      phone: '+1(111)-111-1111',
+      image: '../assets/img/faces/face2.png'
     }
   ],
   events: [
