@@ -9,7 +9,7 @@ export class InMemoryDataService implements InMemoryDbService {
   constructor() { }
 
   createDb() {
-    return {  }
+    return { profile }
   }
 }
 
