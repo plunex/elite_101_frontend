@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "elite-101-dashboard": {
+      "hosting": {
+        "material-dashboard-angular": [
+          "elite-101-dashboard"
+        ]
+      }
+    }
+  }
+}

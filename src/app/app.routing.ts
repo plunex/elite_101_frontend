@@ -8,6 +8,7 @@ import { LoginComponent  } from './login/login.component';
 
 // Guards
 import { DashboardGuard } from './guards/dashboard.guard';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes =[
   {
@@ -25,7 +26,8 @@ const routes: Routes =[
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [LoginGuard]
   },
 
 ];
@@ -34,7 +36,7 @@ const routes: Routes =[
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes,{useHash: true})
+    RouterModule.forRoot(routes)
   ],
   exports: [
   ],

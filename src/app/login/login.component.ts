@@ -17,8 +17,12 @@ export class LoginComponent implements OnInit {
     console.log('clicking')
     this.loginService.login().subscribe(
       data => {
-        this.router.navigate(['/dashboard'])
-      }
+        if(data){
+          localStorage.setItem('user', JSON.stringify(data));
+          this.router.navigateByUrl('/');
+        }
+      },
+      error => console.log(error)
     )
   }
 

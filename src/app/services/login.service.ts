@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject} from 'rxjs';
-import { map } from 'rxjs/operators';
 import { Profile } from '../models/profile';
 const url = 'api/profile/';
 @Injectable({
@@ -19,12 +18,8 @@ export class LoginService {
     return this.user;
   }
 
-  login() :Observable<any> {
-    return this.http.get(url).pipe(
-      map(resp => {
-        localStorage.setItem('user',JSON.stringify(resp));
-      })
-    )
+  login() :Observable<Profile> {
+    return this.http.get<Profile>(url);
   };
 
 }

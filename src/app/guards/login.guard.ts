@@ -6,14 +6,14 @@ import { LoginService } from 'app/services/login.service';
 @Injectable({
   providedIn: 'root'
 })
-export class DashboardGuard implements CanActivate {
+export class LoginGuard implements CanActivate {
   constructor(protected loginService: LoginService,protected router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree {
     if (this.loginService.getUser) {
-      return true;
+      return this.router.parseUrl('/');
     }
-    return this.router.parseUrl('login');
+    return true;
   }
   
 }
