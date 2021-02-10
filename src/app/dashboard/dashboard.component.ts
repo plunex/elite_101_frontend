@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Profile } from 'app/models/profile';
 import { Observable } from 'rxjs';
-
+import { LoginService } from './../services/login.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -11,10 +11,10 @@ export class DashboardComponent implements OnInit {
 
   profile$: Observable<Profile>;
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
-    this.profile$ = JSON.parse(localStorage.getItem('user'));
+    this.profile$ = this.loginService.getUser;
   }
 
 }

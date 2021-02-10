@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject} from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Profile } from '../models/profile';
 const url = 'api/profile/';
 @Injectable({
@@ -10,7 +11,7 @@ export class LoginService {
   private user: Observable<Profile>;
   private userS: BehaviorSubject<any>;
   constructor(private http: HttpClient) { 
-    this.userS = new BehaviorSubject(JSON.parse(localStorage.getItem('user')))
+    this.userS = new BehaviorSubject(JSON.parse(localStorage.getItem('user')));
     this.user = this.userS.value;
   }
 
@@ -19,7 +20,12 @@ export class LoginService {
   }
 
   login() :Observable<Profile> {
-    return this.http.get<Profile>(url);
+    return this.http.get<Profile>(url).pipe(
+      map((value, index) => {
+        localStorage.setItem('user', JSON.stringify(value));
+        return value;
+      })
+    );
   };
 
 }

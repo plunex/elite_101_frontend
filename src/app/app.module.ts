@@ -7,7 +7,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppRoutingModule } from './app.routing';
 import { InMemoryDataService } from './in-memory-data.service';
 import { ComponentsModule } from './components/components.module';
-
+import { AngularFireModule } from '@angular/fire';
 import { AppComponent } from './app.component';
 
 import {
@@ -18,7 +18,7 @@ import {
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login.component';
 
-
+import { environment } from './../environments/environment';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -31,6 +31,7 @@ import { LoginComponent } from './login/login.component';
     // AgmCoreModule.forRoot({
     //   apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     // }),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
     })
