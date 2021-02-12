@@ -10,6 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { NgxPaginationModule } from 'ngx-pagination';
 // Components
 import { DashboardComponent } from './../../dashboard/dashboard.component';
@@ -33,6 +34,7 @@ import { AllEventsComponent } from '../../all-events/all-events.component';
     MatSelectModule,
     MatTooltipModule,
     MatCardModule,
+    MatIconModule,
     NgxPaginationModule
   ],
   declarations: [

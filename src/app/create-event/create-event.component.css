@@ -1,3 +1,9 @@
 .custom-file-input{
     border-bottom: 1px !important;
 }
+.delete-icon{
+    cursor: pointer;
+    position: relative;
+    font-size: 3rem;
+}
+
