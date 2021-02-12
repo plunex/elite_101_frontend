@@ -9,6 +9,7 @@ import { LoginComponent  } from './login/login.component';
 // Guards
 import { DashboardGuard } from './guards/dashboard.guard';
 import { LoginGuard } from './guards/login.guard';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes =[
   {
@@ -29,6 +30,11 @@ const routes: Routes =[
     component: LoginComponent,
     canActivate: [LoginGuard]
   },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    canActivate: [LoginGuard]
+},
 
 ];
 

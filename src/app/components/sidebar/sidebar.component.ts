@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Profile } from 'app/models/profile';
+import { LoginService } from 'app/services/login.service';
+import { Observable } from 'rxjs';
 
 declare const $: any;
 declare interface RouteInfo {
@@ -12,8 +15,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/create-event', title: 'Create Event',  icon:'add', class: '' },
     { path: '/events', title: 'Event List',  icon:'event', class: '' },
     { path: '/users', title: 'User List',  icon:'group', class: '' },
-    { path: '/register', title: 'Register',  icon:'person', class: '' },
-    { path: '/change-password', title: 'Change Password',  icon:'settings', class: '' },
+    { path: '/toggle-dark', title: 'Toggle Dark Theme',  icon:'invert_colors', class: '' },
 ];
 
 @Component({
@@ -23,10 +25,11 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
-
-  constructor() { }
+  profile$: Observable<Profile>;
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
+    this.profile$ = this.loginService.getUser;
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
   isMobileMenu() {

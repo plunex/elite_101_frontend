@@ -4,6 +4,7 @@ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common'
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Profile } from 'app/models/profile';
+import { LoginService } from 'app/services/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -18,24 +19,24 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(location: Location,  private element: ElementRef, private router: Router) {
+    constructor(location: Location,  private element: ElementRef, private router: Router, private loginService: LoginService) {
       this.location = location;
           this.sidebarVisible = false;
     }
 
     ngOnInit(){
-        this.profile$ = JSON.parse(localStorage.getItem('user'));
-      this.listTitles = ROUTES.filter(listTitle => listTitle);
-      const navbar: HTMLElement = this.element.nativeElement;
-      this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
-      this.router.events.subscribe((event) => {
-        this.sidebarClose();
-         var $layer: any = document.getElementsByClassName('close-layer')[0];
-         if ($layer) {
-           $layer.remove();
-           this.mobile_menu_visible = 0;
-         }
-     });
+        this.profile$ = this.loginService.getUser;
+        this.listTitles = ROUTES.filter(listTitle => listTitle);
+        const navbar: HTMLElement = this.element.nativeElement;
+        this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+        this.router.events.subscribe((event) => {
+            this.sidebarClose();
+            var $layer: any = document.getElementsByClassName('close-layer')[0];
+            if ($layer) {
+            $layer.remove();
+            this.mobile_menu_visible = 0;
+            }
+        });
     }
 
     sidebarOpen() {

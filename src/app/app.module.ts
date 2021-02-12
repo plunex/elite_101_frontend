@@ -19,6 +19,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { LoginComponent } from './login/login.component';
 
 import { environment } from './../environments/environment';
+import { ToggleDarkComponent } from './toggle-dark/toggle-dark.component';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -40,6 +41,7 @@ import { environment } from './../environments/environment';
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
+    ToggleDarkComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

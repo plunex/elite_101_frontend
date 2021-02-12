@@ -5,9 +5,9 @@ import { CreateEventComponent } from './../../create-event/create-event.componen
 import { EventListComponent} from './../../event-list/event-list.component';
 import { UsersComponent } from './../../users/users.component';
 import { ChangePasswordComponent } from './../../change-password/change-password.component'
-import { RegisterComponent } from './../../register/register.component';
 import { UpcomingEventsComponent } from 'app/upcoming-events/upcoming-events.component';
 import { AllEventsComponent } from 'app/all-events/all-events.component';
+import { ToggleDarkComponent } from 'app/toggle-dark/toggle-dark.component';
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -37,12 +37,8 @@ export const AdminLayoutRoutes: Routes = [
         component: UsersComponent
     },
     {
-        path: 'register',
-        component: RegisterComponent
-    },
-    {
-        path: 'change-password',
-        component: ChangePasswordComponent
+        path: 'toggle-dark',
+        component: ToggleDarkComponent
     }
     // {
     //   path: '',
